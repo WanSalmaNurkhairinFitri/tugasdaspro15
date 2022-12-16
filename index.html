@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>To Do App</h1>
+    <input type="text">
+    <button>Tambah List</button>
+    <ul></ul>
+    <script>{
+
+        var inputE1 = document.querySelector('input');
+        var buttonE1 = document.querySelector('input');
+        var u1E1 = document.querySelector('u1');
+
+        var todos = [];
+
+        button.addEventListener('click', addToDo);
+
+        function addToDo(){
+            var userInput = inputE1.value;
+            if(userInput.trin()==''){
+                return;
+            }
+            var newToDo = {id:Math.random(), value:userInput};
+            todos.push(newToDo);
+            var toDoList = document.createElement('LI');
+            toDoList.textContent = userInput;
+            toDoList.addEventListener('click', removeToDo);
+            toDoList.dataset.id = newToDo.id;
+            ulEl.appendChild(toDoList);
+            console.log(todos);
+        }
+
+        function removeToDo(event) {
+            var clickedLi = event.target;
+            var itemId = clickedLi.dataset.id;
+            for(var i=o;i<todos.length;1++){
+                if(todos[i].id == item){
+                    todos.splice(i,1);
+                    break;
+                }
+            }
+            clickedLi.parentNode.removeChild(clickedLi);
+            console.log(todos);
+        }
+    </script>
+</body>
+</html>
